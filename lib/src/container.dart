@@ -55,7 +55,7 @@ class PageContainerState extends State<PageIndicatorContainer> {
 
     final initPage = pageView.controller?.initialPage;
 
-    final currentPage = this.currentPage ?? initPage.toDouble();
+    final currentPage = this.currentPage ?? initPage?.toDouble() ?? 0.0;
 
     Widget indicator = PageIndicator(
       length: widget.length,
@@ -66,7 +66,7 @@ class PageContainerState extends State<PageIndicatorContainer> {
       align: widget.align,
       reverse: pageView.reverse,
       currentPage: currentPage,
-      initialPage: initPage.toDouble(),
+      initialPage: initPage?.toDouble() ?? 0.0,
     );
 
     var align = widget.align;
